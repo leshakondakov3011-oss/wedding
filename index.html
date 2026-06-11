@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу — Владислава и Алексей</title>
+    <style>
+        :root {
+            --primary-color: #4a3525; /* Глубокий коричневый */
+            --accent-color: #8c6d53;  /* Мягкий бежево-коричневый */
+            --bg-color: #fcfaf2;      /* Благородный бежевый фон */
+            --card-bg: #ffffff;
+            --text-color: #1a1a1a;    /* Почти черный */
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .hero-img, .location-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(74, 53, 37, 0.15);
+            margin: 25px 0;
+            border: 1px solid rgba(74, 53, 37, 0.1);
+        }
+        
+        /* Стили заголовков под картинку-референс */
+        .intro-text { font-size: 1.25em; margin-bottom: 5px; color: #444; }
+        .main-title { font-size: 2.8em; font-style: italic; color: var(--primary-color); margin: 10px 0 35px 0; font-weight: normal; }
+        h2 { font-size: 1.9em; color: var(--primary-color); margin-top: 50px; font-weight: normal; }
+        h3 { font-size: 1.3em; color: var(--accent-color); margin-bottom: 5px; }
+        
+        /* Динамический блок с именем гостя */
+        .guest-name { 
+            font-size: 2.3em; 
+            font-family: 'Georgia', serif; 
+            font-style: italic; 
+            margin: 15px 0 5px 0; 
+            color: var(--primary-color); 
+            font-weight: normal;
+        }
+        
+        .details { font-size: 1.15em; margin: 20px 0; padding: 0 10px; }
+        .time-notice { font-size: 0.95em; font-style: italic; color: #666; margin-top: -5px; }
+
+        /* Стильный блок даты с линиями и кругом */
+        .date-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 450px;
+            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+        }
+        .date-side {
+            flex: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.1em;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 8px;
+        }
+        .date-center {
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            margin: 0 15px;
+            position: relative;
+            top: -4px;
+        }
+        .date-year {
+            display: block;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            color: var(--accent-color);
+        }
+        
+        form { background: var(--card-bg); padding: 30px; border-radius: 6px; box-shadow: 0 10px 30px rgba(74, 53, 37, 0.08); text-align: left; margin-top: 40px; border-top: 4px solid var(--primary-color); }
+        label { display: block; font-weight: bold; margin-top: 20px; color: var(--primary-color); }
+        .form-desc { font-size: 0.9em; color: #666; margin-top: -2px; margin-bottom: 8px; }
+        input[type="text"], select { width: 100%; padding: 12px; margin-top: 6px; border: 1px solid #dcd6cd; border-radius: 4px; box-sizing: border-box; font-family: inherit; font-size: 1em; background-color: #fff; }
+        input[type="text"]:focus, select:focus { border-color: var(--primary-color); outline: none; }
+        
+        .radio-group, .checkbox-group { margin: 12px 0; background: #faf8f5; padding: 15px; border-radius: 4px; border: 1px dashed #e6dfd5; }
+        .radio-group label, .checkbox-group label { display: block; margin-bottom: 10px; cursor: pointer; font-weight: normal; }
+        .radio-group label:last-child, .checkbox-group label:last-child { margin-bottom: 0; }
+        
+        button { background-color: var(--primary-color); color: white; border: none; padding: 15px 20px; width: 100%; font-size: 1.2em; border-radius: 4px; cursor: pointer; margin-top: 25px; font-family: inherit; transition: background 0.3s, transform 0.1s; letter-spacing: 1px; }
+        button:hover { background-color: #36261a; }
+        button:active { transform: scale(0.99); }
+        hr { width: 40%; border: 0; height: 1px; background: var(--accent-color); margin: 20px auto; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="guest-block" class="guest-name">Дорогие гости!</div>
+        <p class="intro-text">Спешим сообщить радостную новость</p>
+        <h1 class="main-title">Мы женимся!</h1>
+        
+        <div class="date-container">
+            <div class="date-side" style="text-align: right;">Пятница</div>
+            <div class="date-center">7</div>
+            <div class="date-side" style="text-align: left;">Августа</div>
+        </div>
+        <div class="date-year">2026 ГОД</div>
+        
+        <img class="hero-img" src="main.jpg" alt="Владислава и Алексей">
+
+        <p class="details">Мы очень хотим оказаться в окружении самых близких и дорогих для нас людей. Разделите с нами этот особенный и счастливый день!</p>
+
+        <h2>Программа дня</h2>
+        <hr>
+
+        <div class="event-step">
+            <h3>15:00 — Торжественная регистрация</h3>
+            <p class="time-notice">(просьба прибыть за 15–20 минут до начала церемонии)</p>
+            <p><strong>Место:</strong> ЗАГС <span style="white-space: nowrap;">Петродворцового района</span></p>
+            <p>г. Петергоф, Торговая площадь, д. 5</p>
+            <img class="location-img" src="zags.jpg" alt="ЗАГС Петродворцового района">
+        </div>
+
+        <div class="event-step">
+            <h3>16:00 — Сбор гостей</h3>
+            <p><strong>Место:</strong> Коттедж «Марьяж Холл»</p>
+            <p>пос. Марьино, Центральная ул., д. 84</p>
+            <img class="location-img" src="hall.jpg" alt="Коттедж Марьяж Холл">
+        </div>
+
+        <div class="event-step">
+            <h3>16:30 — Праздничный ужин</h3>
+            <p>Вас ждет уютный вечер, поздравления и развлекательная программа</p>
+        </div>
+        <hr style="width: 20%; margin: 15px auto; border-style: dashed;">
+
+        <div class="event-step">
+            <h3>20:30 — Свадебный торт</h3>
+            <p>Сладкий финал нашего торжества</p>
+        </div>
+        
+        <p class="details" style="font-style: italic; background: #faf8f5; padding: 15px; border-radius: 4px; border: 1px solid #e6dfd5; margin-top: 30px;">
+            После торжества мы остаемся на ночевку в коттедже, поэтому берите с собой вещи, необходимые для ночевки!
+        </p>
+
+        <h2>Дресс-код</h2>
+        <p class="details">Мы очень старались сделать этот день красивым, поэтому будем рады, если в своих нарядах вы поддержите цветовую гамму нашей свадьбы:</p>
+        
+        <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+            <div style="text-align: center;">
+                <div style="width: 50px; height: 50px; background-color: #1a1a1a; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin: 0 auto 5px;"></div>
+                <span style="font-size: 0.9em; color: #555;">Черный</span>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 50px; height: 50px; background-color: #e6dfd5; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 0 auto 5px; border: 1px solid #d0c7bc;"></div>
+                <span style="font-size: 0.9em; color: #555;">Бежевый</span>
+            </div>
+            <div style="text-align: center;">
+                <div style="width: 50px; height: 50px; background-color: #4a3525; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin: 0 auto 5px;"></div>
+                <span style="font-size: 0.9em; color: #555;">Коричневый</span>
+            </div>
+        </div>
+
+        <img class="location-img" src="dresskodman.jpg" alt="Пример дресс-кода">
+        <hr>
+
+        <h2>Пожелания по подаркам</h2>
+        <p class="details">Пожалуйста, не дарите нам цветы, к сожалению, мы не успеем насладиться их красотой до отъезда в свадебное путешествие. Если вы хотите сделать нам комплимент, замените букет подарочной картой в любой магазин, на ваше усмотрение.</p>
+        <hr>
+
+        <h2 style="font-family: 'Georgia', serif; font-style: italic; color: var(--accent-color); margin-top: 40px;">Мы вас очень ждем!</h2>
+        <img class="hero-img" src="main2.jpg" alt="Мы вас ждем">
+        <hr>
+
+        <h2>Анкета гостя</h2>
+        <p>Пожалуйста, подтвердите ваше присутствие до 1 июля 2026 года, чтобы мы успели подготовить всё необходимое.</p>
+        
+        <form action="https://formspree.io/f/mpwwnpje" method="POST">
+            <input type="hidden" name="_subject" value="Новый ответ на свадебное приглашение!">
+            <input type="hidden" id="hidden-guest-name" name="Имя из ссылки" value="">
+
+            <label for="name-input">Ваше имя и фамилия:</label>
+            <div class="form-desc">Если вы придете парой/семьей, укажите всех гостей</div>
+            <input type="text" id="name-input" name="Имя в анкете" required placeholder="Иван и Мария Ивановы">
+
+            <label>Планируете ли вы присутствовать?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="Присутствие" value="Да, приду (придем)" checked> Да, с удовольствием приму (примем) приглашение</label>
+                <label><input type="radio" name="Присутствие" value="Не смогу (сможем)"> К сожалению, не смогу (не сможем) присутствовать</label>
+            </div>
+
+            <label>Останетесь ли вы с нами на ночевку в коттедже?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="Ночевка в коттедже" value="Да, остаюсь (остаемся)" checked> Да, останусь (останемся) на ночевку</label>
+                <label><input type="radio" name="Ночевка в коттедже" value="Нет, уеду (уедем) вечером"> Нет, уеду (уедем) после окончания праздника</label>
+            </div>
+
+            <label>Ваши предпочтения по напиткам (можно выбрать несколько):</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="Напитки" value="Вино" id="wine-checkbox" onchange="toggleAlcoholOptions()"> Вино (отметьте тип ниже)</label>
+                <label><input type="checkbox" name="Напитки" value="Шампанское"> Шампанское</label>
+                <label><input type="checkbox" name="Напитки" value="Крепкий алкоголь" id="strong-checkbox" onchange="toggleAlcoholOptions()"> Крепкий алкоголь (отметьте тип ниже)</label>
+                <label><input type="checkbox" name="Напитки" value="Водка"> Водка</label>
+                <label><input type="checkbox" name="Напитки" value="Мартини"> Мартини</label>
+                <label><input type="checkbox" name="Напитки" value="Безалкогольные"> Безалкогольные напитки (Лимонад / Вода / Сок)</label>
+            </div>
+
+            <div id="wine-details-block" style="display: none; margin-top: 15px; animation: fadeIn 0.4s ease;">
+                <label>Предпочтения по вину (цвет):</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="Вино: Цвет" value="Красное"> Красное</label>
+                    <label><input type="checkbox" name="Вино: Цвет" value="Белое"> Белое</label>
+                    <label><input type="checkbox" name="Вино: Цвет" value="Розовое"> Розовое</label>
+                </div>
+
+                <label>Предпочтения по вину (сахар):</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="Вино: Сахар" value="Сухое"> Сухое</label>
+                    <label><input type="checkbox" name="Вино: Сахар" value="Полусухое"> Полусухое</label>
+                    <label><input type="checkbox" name="Вино: Сахар" value="Полусладкое"> Полусладкое</label>
+                    <label><input type="checkbox" name="Вино: Сахар" value="Сладкое"> Сладкое</label>
+                </div>
+            </div>
+
+            <div id="strong-details-block" style="display: none; margin-top: 15px; animation: fadeIn 0.4s ease;">
+                <label>Предпочтения по крепкому алкоголю:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="Крепкий алкоголь: Тип" value="Виски"> Виски</label>
+                    <label><input type="checkbox" name="Крепкий алкоголь: Тип" value="Коньяк"> Коньяк</label>
+                    <label><input type="checkbox" name="Крепкий алкоголь: Тип" value="Джин"> Джин</label>
+                </div>
+            </div>
+
+            <label for="wishes">Ваши пожелания или комментарии (необязательно):</label>
+            <input type="text" id="wishes" name="Пожелания / Аллергии" placeholder="Например: аллергия на орехи, детское меню...">
+
+            <button type="submit">Отправить в один клик</button>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        // ПЕРСОНАЛИЗАЦИЯ ИМЕН И ОБРАЩЕНИЙ
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+        const guestName = getQueryParam('name');
+        const guestCall = getQueryParam('cl');
+        
+        if (guestName) {
+            const formattedName = decodeURIComponent(guestName).replace(/_/g, ' ');
+            if (guestCall) {
+                const formattedCall = decodeURIComponent(guestCall).replace(/_/g, ' ');
+                document.getElementById('guest-block').innerText = formattedCall + ' ' + formattedName + '!';
+            } else {
+                document.getElementById('guest-block').innerText = formattedName + '!';
+            }
+            document.getElementById('name-input').value = formattedName;
+            document.getElementById('hidden-guest-name').value = formattedName;
+        }
+
+        // УПРАВЛЕНИЕ РАСКРЫВАЮЩИМИСЯ СПИСКАМИ АЛКОГОЛЯ
+        function toggleAlcoholOptions() {
+            const wineCheckbox = document.getElementById('wine-checkbox');
+            const wineBlock = document.getElementById('wine-details-block');
+            if (wineCheckbox && wineCheckbox.checked) {
+                wineBlock.style.display = 'block';
+            } else {
+                wineBlock.style.display = 'none';
+            }
+
+            const strongCheckbox = document.getElementById('strong-checkbox');
+            const strongBlock = document.getElementById('strong-details-block');
+            if (strongCheckbox && strongCheckbox.checked) {
+                strongBlock.style.display = 'block';
+            } else {
+                strongBlock.style.display = 'none';
+            }
+        }
+        toggleAlcoholOptions();
+    </script>
+</body>
+</html>
